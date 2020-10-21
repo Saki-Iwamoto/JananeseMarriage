@@ -37,10 +37,20 @@ struct HomeView: View {
                 .navigationBarTitle(Text("結婚する人"))
             }
             
-            Button("結婚する") {
-                print("結婚する")
+            Button(action: {
+                print("結婚処理")
+            }){
+                Text("結婚する")
+                    .foregroundColor(Color.white)
             }
+            .padding(.all)
+            .background(Color.gray)
+            .overlay(
+                RoundedRectangle(cornerRadius: 30)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
         }
+        .padding(.bottom)
     }
     
     /// 削除
