@@ -23,6 +23,8 @@ struct HomeView: View {
                             Spacer()
                         }
                     }
+                    .onDelete(perform: delete)
+                    
                     Button("入力する") {
                         self.isPresented = true
                     }
@@ -39,6 +41,12 @@ struct HomeView: View {
                 print("結婚する")
             }
         }
+    }
+    
+    /// 削除
+    /// - Parameter offsets: 削除対象
+    func delete(at offsets: IndexSet) {
+        animals.remove(atOffsets: offsets)
     }
 }
 
