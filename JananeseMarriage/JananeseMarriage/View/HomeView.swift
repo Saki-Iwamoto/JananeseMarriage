@@ -25,8 +25,13 @@ struct HomeView: View {
                     }
                     .onDelete(perform: delete)
                     
-                    Button("入力する") {
+                    Button(action: {
                         self.isPresented = true
+                    }){
+                        HStack {
+                            Image("AddCircle")
+                            Text("入力する")
+                        }
                     }
                     .sheet(isPresented: $isPresented) {
                         InputPartnerView()
